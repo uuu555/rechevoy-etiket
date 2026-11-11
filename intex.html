@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Речевой этикет в переговорной коммуникации</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap&subset=cyrillic" rel="stylesheet">
+<style>
+  :root{
+    --blue:#1e3a5f;
+    --blue-soft:#eaf1f8;
+    --teal:#2a9d8f;
+    --teal-soft:#e7f5f3;
+    --amber:#e8912d;
+    --amber-soft:#fdf3e5;
+    --red:#c94f4f;
+    --bg:#faf8f4;
+    --text:#243447;
+    --muted:#5c6b7a;
+    --card:#ffffff;
+    --shadow:0 6px 24px rgba(30,58,95,.08);
+    --radius:18px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Nunito','Segoe UI',Arial,sans-serif;
+    background:var(--bg);color:var(--text);
+    line-height:1.65;font-size:17px;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 22px}
+
+  /* ===== навигация ===== */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid #e8e3da;
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .logo{font-weight:800;color:var(--blue);font-size:1.05rem;letter-spacing:.02em}
+  .logo span{color:var(--teal)}
+  nav ul{display:flex;gap:6px;list-style:none;flex-wrap:wrap}
+  nav a{
+    text-decoration:none;color:var(--muted);font-weight:600;
+    padding:7px 13px;border-radius:999px;font-size:.92rem;white-space:nowrap;
+  }
+  nav a:hover{background:var(--blue-soft);color:var(--blue)}
+  @media(max-width:720px){
+    nav ul{display:none}
+  }
+
+  /* ===== hero ===== */
+  header{
+    background:linear-gradient(135deg,var(--blue) 0%,#2b5876 55%,var(--teal) 130%);
+    color:#fff;text-align:center;padding:72px 22px 84px;
+    position:relative;overflow:hidden;
+  }
+  header::after{
+    content:"";position:absolute;left:0;right:0;bottom:-1px;height:70px;
+    background:var(--bg);clip-path:ellipse(75% 100% at 50% 100%);
+  }
+  .kicker{
+    display:inline-block;background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);
+    padding:6px 16px;border-radius:999px;
+    font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    margin-bottom:26px;
+  }
+  header h1{
+    font-family:'Playfair Display',Georgia,serif;
+    font-size:clamp(1.6rem,4.4vw,2.7rem);
+    max-width:840px;margin:0 auto 18px;line-height:1.25;
+  }
+  header p.sub{max-width:620px;margin:0 auto;font-size:1.05rem;opacity:.92}
+  .hero-tags{display:flex;gap:10px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+  .hero-tags span{
+    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);
+    padding:5px 14px;border-radius:999px;font-size:.85rem;font-weight:600;
+  }
+
+  /* ===== секции ===== */
+  section{padding:58px 0 10px}
+  h2{
+    font-family:'Playfair Display',Georgia,serif;color:var(--blue);
+    font-size:clamp(1.5rem,3vw,2rem);margin-bottom:8px;
+  }
+  .section-lead{color:var(--muted);max-width:640px;margin-bottom:26px}
+  .num{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:34px;height:34px;border-radius:10px;color:#fff;font-weight:800;
+    margin-right:12px;vertical-align:-4px;font-family:'Nunito',sans-serif;font-size:1rem;
+  }
+
+  /* появление при прокрутке */
+  .fade{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .fade.on{opacity:1;transform:none}
+
+  /* карточки */
+  .grid{display:grid;gap:18px}
+  .g2{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .card{
+    background:var(--card);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:24px 26px;
+    border:1px solid #eee8dd;
+  }
+  .card h3{font-size:1.12rem;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+  .card p{color:var(--muted);font-size:.98rem}
+  .examples{list-style:none;margin-top:12px}
+  .examples li{
+    background:var(--blue-soft);border-left:4px solid var(--teal);
+    border-radius:8px;padding:8px 14px;margin-top:8px;
+    font-weight:700;color:var(--blue);font-size:.98rem;
+  }
+  .examples li em{font-style:normal;font-weight:600;color:var(--muted);display:block;font-size:.85rem}
+
+  .badge{font-size:.75rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;border-radius:999px;padding:3px 10px}
+  .badge.t{background:var(--teal-soft);color:var(--teal)}
+  .badge.a{background:var(--amber-soft);color:#b06a12}
+
+  /* мини-таблица сравнения */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:640px){.compare{grid-template-columns:1fr}}
+  .compare .col{border-radius:var(--radius);padding:28px;color:#fff}
+  .col.v{background:linear-gradient(150deg,#1e3a5f,#2b5876)}
+  .col.n{background:linear-gradient(150deg,#2a9d8f,#217a6f)}
+  .col .big{font-size:2.2rem;line-height:1}
+  .col h3{font-size:1.3rem;margin:10px 0 8px}
+  .col p{opacity:.95;font-size:.95rem}
+  .col .hint{margin-top:14px;font-size:.88rem;opacity:.85}
+
+  /* план 5 минут */
+  .plan{margin-top:26px}
+  .plan ol{list-style:none;counter-reset:step}
+  .plan li{
+    counter-increment:step;display:flex;gap:16px;align-items:flex-start;
+    padding:13px 6px;border-bottom:1px dashed #e0d9cb;
+  }
+  .plan li:last-child{border-bottom:none}
+  .plan li::before{
+    content:counter(step);
+    flex:0 0 34px;height:34px;border-radius:50%;
+    background:var(--amber);color:#fff;font-weight:800;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .plan b{display:block}
+  .plan time{display:inline-block;font-size:.78rem;color:#fff;background:var(--teal);
+    padding:2px 10px;border-radius:999px;font-weight:700;margin-bottom:4px}
+  .plan span{color:var(--muted);font-size:.93rem}
+
+  /* советы */
+  .tips li{
+    background:#fff;border:1px solid #eee8dd;border-left:5px solid var(--amber);
+    border-radius:12px;padding:14px 18px;margin-bottom:12px;list-style:none;
+    box-shadow:var(--shadow);display:flex;gap:12px;align-items:center;
+    font-weight:600;
+  }
+  .tips .ico{font-size:1.5rem}
+
+  /* мини-тест */
+  .quiz .card{cursor:pointer;user-select:none;transition:transform .2s}
+  .quiz .card:hover{transform:translateY(-4px)}
+  .quiz .answer{display:none;margin-top:14px;font-weight:800;padding:10px 16px;border-radius:10px}
+  .quiz .card.open .answer{display:block}
+  .quiz .ans-yes{background:#e7f5ef;color:#1e7a4f}
+  .quiz .ans-no{background:#fdecec;color:#b03a3a}
+  .quiz .toggle{font-size:.8rem;color:var(--muted);font-weight:700;margin-top:6px}
+  .card.open .toggle{visibility:hidden}
+
+  /* заключение */
+  .final{
+    background:linear-gradient(135deg,var(--blue),#2b5876 60%,var(--teal) 140%);
+    color:#fff;border-radius:24px;padding:46px 30px;text-align:center;
+    margin:10px 0 40px;box-shadow:var(--shadow);
+  }
+  .final h2{color:#fff}
+  .formula{
+    font-family:'Playfair Display',serif;font-size:clamp(1.3rem,3.4vw,2rem);
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:22px 0;
+  }
+  .formula span{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);
+    padding:8px 18px;border-radius:14px}
+  .formula .plus{background:none;border:none;padding:0 2px;font-size:1.6rem}
+  .thanks{font-size:1.15rem;font-weight:800;margin-top:10px}
+
+  footer{text-align:center;color:var(--muted);font-size:.85rem;padding:20px 0 34px;border-top:1px solid #e8e3da}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">Речевой<span> · </span>этикет</div>
+    <ul>
+      <li><a href="#vvedenie">Введение</a></li>
+      <li><a href="#verbal">Вербальные средства</a></li>
+      <li><a href="#neverbal">Невербальные средства</a></li>
+      <li><a href="#soveti">Советы</a></li>
+      <li><a href="#test">Мини-тест</a></li>
+      <li><a href="#konec">Заключение</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header>
+  <div class="kicker">Учебная страница · Простой русский язык</div>
+  <h1>Вербальные и невербальные средства речевого этикета в&nbsp;переговорной коммуникации на&nbsp;русском языке</h1>
+  <p class="sub">Как говорить вежливо и вести себя правильно на переговорах? Смотрим вместе — просто и понятно.</p>
+  <div class="hero-tags">
+    <span>💬 Вербальные средства</span>
+    <span>😊 Невербальные средства</span>
+    <span>🤝 Переговоры</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ================= ВВЕДЕНИЕ ================= -->
+  <section id="vvedenie" class="fade">
+    <h2><span class="num" style="background:var(--teal)">1</span>Введение: что это такое?</h2>
+    <p class="section-lead">Три простых понятия, которые нужны нам сегодня.</p>
+
+    <div class="grid g3">
+      <div class="card">
+        <h3>📖 Речевой этикет</h3>
+        <p>Это <b>правила вежливого общения</b>. Мы используем специальные слова, чтобы говорить вежливо и доброжелательно.</p>
+      </div>
+      <div class="card">
+        <h3>🤝 Переговоры</h3>
+        <p>Это <b>важный разговор</b>: мы обсуждаем бизнес, цену, договор. Мы договариваемся и находим решение вместе.</p>
+      </div>
+      <div class="card">
+        <h3>❓ Зачем это нужно?</h3>
+        <p>Вежливость на переговорах — это <b>успех</b>: хорошее первое впечатление, дружеская атмосфера и хороший результат.</p>
+      </div>
+    </div>
+
+    <div class="card plan">
+      <h3>⏱️ План презентации (5 минут)</h3>
+      <ol>
+        <li><div><time>0:00 – 0:30</time><b>Приветствие и тема</b><span>Кто я? О чём мой доклад?</span></div></li>
+        <li><div><time>0:30 – 1:30</time><b>Введение</b><span>Что такое речевой этикет и переговоры?</span></div></li>
+        <li><div><time>1:30 – 3:00</time><b>Вербальные средства</b><span>Слова: приветствие, благодарность, просьба…</span></div></li>
+        <li><div><time>3:00 – 4:15</time><b>Невербальные средства</b><span>Улыбка, жесты, рукопожатие, дистанция…</span></div></li>
+        <li><div><time>4:15 – 5:00</time><b>Советы и заключение</b><span>Золотые правила + итог + мини-тест</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================= ВЕРБАЛЬНЫЕ ================= -->
+  <section id="verbal" class="fade">
+    <h2><span class="num" style="background:#2b5876">2</span>Вербальные средства</h2>
+    <p class="section-lead"><b>Вербальные средства</b> — это <b>слова</b>, которые мы говорим. Это наша «вежливая лексика».</p>
+
+    <div class="grid g2">
+      <div class="card">
+        <h3>🙋 Приветствие <span class="badge t">начало</span></h3>
+        <p>Начало разговора. Первое впечатление — самое важное!</p>
+        <ul class="examples">
+          <li>Здравствуйте!<em>Добрый день!</em></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>👤 Обращение <span class="badge t">вежливо</span></h3>
+        <p>Вежливое имя собеседника — «вы» и имя-отчество.</p>
+        <ul class="examples">
+          <li>Уважаемые господа!<em>Уважаемый Иван Петрович!</em></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🙏 Благодарность <span class="badge a">обязательно</span></h3>
+        <p>Благодарим за внимание, помощь и время.</p>
+        <ul class="examples">
+          <li>Спасибо! Большое спасибо!<em>Благодарю вас за встречу!</em></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>😔 Извинение <span class="badge a">если ошиблись</span></h3>
+        <p>Извиняемся спокойно и быстро.</p>
+        <ul class="examples">
+          <li>Извините, пожалуйста!<em>Прошу прощения!</em></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>✋ Просьба <span class="badge t">мягко</span></h3>
+        <p>Просим вежливо, не как приказ.</p>
+        <ul class="examples">
+          <li>Будьте добры…<em>Не могли бы вы…?</em></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>💬 Согласие и несогласие <span class="badge a">переговоры</span></h3>
+        <p>Соглашаемся — или вежливо говорим «нет».</p>
+        <ul class="examples">
+          <li>Я согласен с вами.<em>Боюсь, я не могу согласиться.</em></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>👋 Прощание <span class="badge t">конец</span></h3>
+        <p>Конец разговора — тоже вежливый.</p>
+        <ul class="examples">
+          <li>До свидания! Всего доброго!<em>До встречи! Было приятно работать с вами!</em></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🗣️ Тон голоса <span class="badge t">как говорить</span></h3>
+        <p>Спокойный, вежливый, дружелюбный тон. <b>Не громко и не быстро!</b></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= НЕВЕРБАЛЬНЫЕ ================= -->
+  <section id="neverbal" class="fade">
+    <h2><span class="num" style="background:var(--teal)">3</span>Невербальные средства</h2>
+    <p class="section-lead"><b>Невербальные средства</b> — это <b>не слова</b>. Это наше тело, лицо и голос.</p>
+
+    <div class="compare">
+      <div class="col v">
+        <div class="big">💬</div>
+        <h3>Вербальные</h3>
+        <p>Слова, фразы, вопросы и ответы — то, что мы <b>говорим</b>.</p>
+        <p class="hint">Пример: «Здравствуйте! Спасибо! До свидания!»</p>
+      </div>
+      <div class="col n">
+        <div class="big">😊</div>
+        <h3>Невербальные</h3>
+        <p>Улыбка, жесты, мимика, поза — то, что мы <b>показываем без слов</b>.</p>
+        <p class="hint">Пример: улыбка и рукопожатие при встрече</p>
+      </div>
+    </div>
+
+    <div class="grid g3" style="margin-top:18px">
+      <div class="card">
+        <h3>😊 Улыбка</h3>
+        <p>Показывает <b>дружелюбие</b>. Но не слишком много — улыбка должна быть искренней.</p>
+      </div>
+      <div class="card">
+        <h3>👁 Контакт глаз</h3>
+        <p>Смотрим на собеседника — это <b>внимание и честность</b>. Не смотрим в телефон!</p>
+      </div>
+      <div class="card">
+        <h3>🤝 Рукопожатие</h3>
+        <p>При встрече. Короткое и <b>крепкое</b> — не слишком сильное и не слишком слабое.</p>
+      </div>
+      <div class="card">
+        <h3>👌 Жесты</h3>
+        <p>Спокойные и понятные. <b>Не слишком много!</b> Один жест — одна мысль.</p>
+      </div>
+      <div class="card">
+        <h3>🙂 Мимика</h3>
+        <p>Дружелюбное, спокойное лицо. Без напряжения и без скучающего вида.</p>
+      </div>
+      <div class="card">
+        <h3>🧍 Осанка</h3>
+        <p>Прямая осанка = <b>уверенность</b>. Не сутулимся, сидим или стоим красиво.</p>
+      </div>
+      <div class="card">
+        <h3>📏 Дистанция</h3>
+        <p>Не слишком близко к собеседнику — примерно <b>1–1,5 метра</b>. Это комфортно.</p>
+      </div>
+      <div class="card">
+        <h3>✅ Кивок головы</h3>
+        <p>Немного киваем — показываем: «<b>я слушаю вас</b>, я согласен».</p>
+      </div>
+      <div class="card">
+        <h3>🔇 Пауза</h3>
+        <p>Небольшая пауза — это нормально. Она показывает: мы <b>думаем</b> перед ответом.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= СОВЕТЫ ================= -->
+  <section id="soveti" class="fade">
+    <h2><span class="num" style="background:var(--amber)">4</span>Золотые правила на переговорах</h2>
+    <p class="section-lead">Пять простых советов — запомните их легко!</p>
+    <ul class="tips">
+      <li><span class="ico">🗣️</span>Говорите вежливо и спокойно, не перебивайте собеседника.</li>
+      <li><span class="ico">👀</span>Улыбайтесь и смотрите на собеседника — покажите внимание.</li>
+      <li><span class="ico">🙏</span>Используйте слова «спасибо», «пожалуйста» и «извините».</li>
+      <li><span class="ico">👂</span>Слушайте внимательно, не смотрите в телефон.</li>
+      <li><span class="ico">💎</span>Будьте честны и точны: «да» — это «да», «нет» — это «нет».</li>
+    </ul>
+  </section>
+
+  <!-- ================= МИНИ-ТЕСТ ================= -->
+  <section id="test" class="fade">
+    <h2><span class="num" style="background:var(--red)">?</span>Проверь себя!</h2>
+    <p class="section-lead">Правильно или нет? <b>Нажмите на карточку</b> и узнайте ответ.</p>
+    <div class="grid g3 quiz">
+      <div class="card" onclick="this.classList.toggle('open')">
+        <h3>1️⃣ На переговорах можно перебивать собеседника.</h3>
+        <div class="answer ans-no">❌ НЕТ! Нельзя перебивать. Слушайте внимательно.</div>
+        <p class="toggle">👆 нажмите, чтобы увидеть ответ</p>
+      </div>
+      <div class="card" onclick="this.classList.toggle('open')">
+        <h3>2️⃣ Крепкое рукопожатие — это хорошо.</h3>
+        <div class="answer ans-yes">✅ ДА! Короткое и крепкое рукопожатие показывает уверенность.</div>
+        <p class="toggle">👆 нажмите, чтобы увидеть ответ</p>
+      </div>
+      <div class="card" onclick="this.classList.toggle('open')">
+        <h3>3️⃣ Нужно говорить «спасибо» и «извините».</h3>
+        <div class="answer ans-yes">✅ ДА! Это базовые слова речевого этикета.</div>
+        <p class="toggle">👆 нажмите, чтобы увидеть ответ</p>
+      </div>
+      <div class="card" onclick="this.classList.toggle('open')">
+        <h3>4️⃣ Улыбка — это вербальное средство.</h3>
+        <div class="answer ans-no">❌ НЕТ! Улыбка — невербальное средство, это не слово.</div>
+        <p class="toggle">👆 нажмите, чтобы увидеть ответ</p>
+      </div>
+      <div class="card" onclick="this.classList.toggle('open')">
+        <h3>5️⃣ Очень близкая дистанция — это комфортно.</h3>
+        <div class="answer ans-no">❌ НЕТ! Лучше 1–1,5 метра — это вежливо и удобно.</div>
+        <p class="toggle">👆 нажмите, чтобы увидеть ответ</p>
+      </div>
+      <div class="card" onclick="this.classList.toggle('open')">
+        <h3>6️⃣ «Здравствуйте!» — это приветствие.</h3>
+        <div class="answer ans-yes">✅ ДА! Приветствие — начало разговора.</div>
+        <p class="toggle">👆 нажмите, чтобы увидеть ответ</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ЗАКЛЮЧЕНИЕ ================= -->
+  <section id="konec" class="fade">
+    <div class="final">
+      <h2>Заключение</h2>
+      <p style="max-width:560px;margin:14px auto 0;opacity:.95">Речевой этикет — это <b>ключ к успешным переговорам</b>. Вежливые слова и дружелюбное поведение вместе делают разговор эффективным.</p>
+      <div class="formula">
+        <span>💬 Слова</span><span class="plus">+</span>
+        <span>😊 Улыбка</span><span class="plus">+</span>
+        <span>🤝 Уважение</span><span class="plus">=</span>
+        <span>🏆 Успех!</span>
+      </div>
+      <p class="thanks">Спасибо за внимание! 🎓</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>Учебная страница для презентации · Речевой этикет в переговорной коммуникации · Простой русский язык</footer>
+
+<script>
+  // плавное появление секций при прокрутке
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('on'); });
+  },{threshold:.12});
+  document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
