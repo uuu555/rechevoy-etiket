@@ -132,7 +132,7 @@
   .col p{opacity:.95;font-size:.95rem}
   .col .hint{margin-top:14px;font-size:.88rem;opacity:.85}
 
-  /* план 5 минут */
+  /* план занятия */
   .plan{margin-top:26px}
   .plan ol{list-style:none;counter-reset:step}
   .plan li{
@@ -147,8 +147,6 @@
     display:flex;align-items:center;justify-content:center;
   }
   .plan b{display:block}
-  .plan time{display:inline-block;font-size:.78rem;color:#fff;background:var(--teal);
-    padding:2px 10px;border-radius:999px;font-weight:700;margin-bottom:4px}
   .plan span{color:var(--muted);font-size:.93rem}
 
   /* советы */
@@ -160,10 +158,17 @@
   }
   .tips .ico{font-size:1.5rem}
 
-  /* мини-тест */
-  .quiz .card{cursor:pointer;user-select:none;transition:transform .2s}
+  /* упражнения */
+  .practice{margin-top:38px;border-top:1px dashed #ddd5c6;padding-top:30px}
+  .practice h3{
+    font-family:'Playfair Display',Georgia,serif;color:var(--blue);
+    font-size:1.25rem;margin-bottom:6px;display:block;
+  }
+  .practice .lead{color:var(--muted);font-size:.95rem;margin-bottom:18px}
+  .quiz .card{cursor:pointer;user-select:none;transition:transform .2s;padding:20px 22px}
   .quiz .card:hover{transform:translateY(-4px)}
-  .quiz .answer{display:none;margin-top:14px;font-weight:800;padding:10px 16px;border-radius:10px}
+  .quiz .card h3{font-size:1rem;display:block;line-height:1.45}
+  .quiz .answer{display:none;margin-top:14px;font-weight:800;padding:10px 16px;border-radius:10px;font-size:.92rem}
   .quiz .card.open .answer{display:block}
   .quiz .ans-yes{background:#e7f5ef;color:#1e7a4f}
   .quiz .ans-no{background:#fdecec;color:#b03a3a}
@@ -185,8 +190,6 @@
     padding:8px 18px;border-radius:14px}
   .formula .plus{background:none;border:none;padding:0 2px;font-size:1.6rem}
   .thanks{font-size:1.15rem;font-weight:800;margin-top:10px}
-
-  footer{text-align:center;color:var(--muted);font-size:.85rem;padding:20px 0 34px;border-top:1px solid #e8e3da}
 </style>
 </head>
 <body>
@@ -199,7 +202,6 @@
       <li><a href="#verbal">Вербальные средства</a></li>
       <li><a href="#neverbal">Невербальные средства</a></li>
       <li><a href="#soveti">Советы</a></li>
-      <li><a href="#test">Мини-тест</a></li>
       <li><a href="#konec">Заключение</a></li>
     </ul>
   </div>
@@ -221,7 +223,7 @@
   <!-- ================= ВВЕДЕНИЕ ================= -->
   <section id="vvedenie" class="fade">
     <h2><span class="num" style="background:var(--teal)">1</span>Введение: что это такое?</h2>
-    <p class="section-lead">Три простых понятия, которые нужны нам сегодня.</p>
+    <p class="section-lead">Три простых понятия, о которых мы поговорим на этой странице.</p>
 
     <div class="grid g3">
       <div class="card">
@@ -239,13 +241,13 @@
     </div>
 
     <div class="card plan">
-      <h3>⏱️ План презентации (5 минут)</h3>
+      <h3>План занятия</h3>
       <ol>
-        <li><div><time>0:00 – 0:30</time><b>Приветствие и тема</b><span>Кто я? О чём мой доклад?</span></div></li>
-        <li><div><time>0:30 – 1:30</time><b>Введение</b><span>Что такое речевой этикет и переговоры?</span></div></li>
-        <li><div><time>1:30 – 3:00</time><b>Вербальные средства</b><span>Слова: приветствие, благодарность, просьба…</span></div></li>
-        <li><div><time>3:00 – 4:15</time><b>Невербальные средства</b><span>Улыбка, жесты, рукопожатие, дистанция…</span></div></li>
-        <li><div><time>4:15 – 5:00</time><b>Советы и заключение</b><span>Золотые правила + итог + мини-тест</span></div></li>
+        <li><div><b>Приветствие и тема</b><span>Кто я? О чём эта страница?</span></div></li>
+        <li><div><b>Введение</b><span>Что такое речевой этикет и переговоры?</span></div></li>
+        <li><div><b>Вербальные средства</b><span>Слова: приветствие, благодарность, просьба…</span></div></li>
+        <li><div><b>Невербальные средства</b><span>Улыбка, жесты, рукопожатие, дистанция…</span></div></li>
+        <li><div><b>Советы и заключение</b><span>Золотые правила + итог</span></div></li>
       </ol>
     </div>
   </section>
@@ -310,6 +312,44 @@
         <p>Спокойный, вежливый, дружелюбный тон. <b>Не громко и не быстро!</b></p>
       </div>
     </div>
+
+    <!-- упражнение 1: вербальные средства -->
+    <div class="practice">
+      <h3>✍️ Проверь себя: вербальные средства</h3>
+      <p class="lead">Правильно или нет? <b>Нажмите на карточку</b> и узнайте ответ.</p>
+      <div class="grid g3 quiz">
+        <div class="card" onclick="this.classList.toggle('open')">
+          <h3>1️⃣ «Здравствуйте!» — это приветствие.</h3>
+          <div class="answer ans-yes">✅ ДА! Приветствие — начало разговора.</div>
+          <p class="toggle">👆 нажмите, чтобы увидеть ответ</p>
+        </div>
+        <div class="card" onclick="this.classList.toggle('open')">
+          <h3>2️⃣ «Спасибо» — это слово извинения.</h3>
+          <div class="answer ans-no">❌ НЕТ! «Спасибо» — это благодарность.</div>
+          <p class="toggle">👆 нажмите, чтобы увидеть ответ</p>
+        </div>
+        <div class="card" onclick="this.classList.toggle('open')">
+          <h3>3️⃣ «Будьте добры…» — это вежливая просьба.</h3>
+          <div class="answer ans-yes">✅ ДА! Так мы просим вежливо, не как приказ.</div>
+          <p class="toggle">👆 нажмите, чтобы увидеть ответ</p>
+        </div>
+        <div class="card" onclick="this.classList.toggle('open')">
+          <h3>4️⃣ На переговорах можно перебивать собеседника.</h3>
+          <div class="answer ans-no">❌ НЕТ! Нельзя перебивать. Слушайте внимательно.</div>
+          <p class="toggle">👆 нажмите, чтобы увидеть ответ</p>
+        </div>
+        <div class="card" onclick="this.classList.toggle('open')">
+          <h3>5️⃣ «Боюсь, я не могу согласиться» — это вежливый отказ.</h3>
+          <div class="answer ans-yes">✅ ДА! Так мы вежливо говорим «нет».</div>
+          <p class="toggle">👆 нажмите, чтобы увидеть ответ</p>
+        </div>
+        <div class="card" onclick="this.classList.toggle('open')">
+          <h3>6️⃣ «До свидания!» — это прощание.</h3>
+          <div class="answer ans-yes">✅ ДА! Прощание — конец разговора.</div>
+          <p class="toggle">👆 нажмите, чтобы увидеть ответ</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ================= НЕВЕРБАЛЬНЫЕ ================= -->
@@ -370,6 +410,44 @@
         <p>Небольшая пауза — это нормально. Она показывает: мы <b>думаем</b> перед ответом.</p>
       </div>
     </div>
+
+    <!-- упражнение 2: невербальные средства -->
+    <div class="practice">
+      <h3>✍️ Проверь себя: невербальные средства</h3>
+      <p class="lead">Правильно или нет? <b>Нажмите на карточку</b> и узнайте ответ.</p>
+      <div class="grid g3 quiz">
+        <div class="card" onclick="this.classList.toggle('open')">
+          <h3>1️⃣ Улыбка — это вербальное средство.</h3>
+          <div class="answer ans-no">❌ НЕТ! Улыбка — невербальное средство, это не слово.</div>
+          <p class="toggle">👆 нажмите, чтобы увидеть ответ</p>
+        </div>
+        <div class="card" onclick="this.classList.toggle('open')">
+          <h3>2️⃣ Крепкое рукопожатие — это хорошо.</h3>
+          <div class="answer ans-yes">✅ ДА! Короткое и крепкое рукопожатие показывает уверенность.</div>
+          <p class="toggle">👆 нажмите, чтобы увидеть ответ</p>
+        </div>
+        <div class="card" onclick="this.classList.toggle('open')">
+          <h3>3️⃣ Очень близкая дистанция — это комфортно.</h3>
+          <div class="answer ans-no">❌ НЕТ! Лучше 1–1,5 метра — это вежливо и удобно.</div>
+          <p class="toggle">👆 нажмите, чтобы увидеть ответ</p>
+        </div>
+        <div class="card" onclick="this.classList.toggle('open')">
+          <h3>4️⃣ Контакт глаз показывает внимание.</h3>
+          <div class="answer ans-yes">✅ ДА! Мы смотрим на собеседника — значит, мы слушаем.</div>
+          <p class="toggle">👆 нажмите, чтобы увидеть ответ</p>
+        </div>
+        <div class="card" onclick="this.classList.toggle('open')">
+          <h3>5️⃣ Во время разговора можно смотреть в телефон.</h3>
+          <div class="answer ans-no">❌ НЕТ! Телефон мешает контакту. Смотрите на собеседника.</div>
+          <p class="toggle">👆 нажмите, чтобы увидеть ответ</p>
+        </div>
+        <div class="card" onclick="this.classList.toggle('open')">
+          <h3>6️⃣ Прямая осанка показывает уверенность.</h3>
+          <div class="answer ans-yes">✅ ДА! Прямая осанка = уверенность.</div>
+          <p class="toggle">👆 нажмите, чтобы увидеть ответ</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ================= СОВЕТЫ ================= -->
@@ -383,44 +461,6 @@
       <li><span class="ico">👂</span>Слушайте внимательно, не смотрите в телефон.</li>
       <li><span class="ico">💎</span>Будьте честны и точны: «да» — это «да», «нет» — это «нет».</li>
     </ul>
-  </section>
-
-  <!-- ================= МИНИ-ТЕСТ ================= -->
-  <section id="test" class="fade">
-    <h2><span class="num" style="background:var(--red)">?</span>Проверь себя!</h2>
-    <p class="section-lead">Правильно или нет? <b>Нажмите на карточку</b> и узнайте ответ.</p>
-    <div class="grid g3 quiz">
-      <div class="card" onclick="this.classList.toggle('open')">
-        <h3>1️⃣ На переговорах можно перебивать собеседника.</h3>
-        <div class="answer ans-no">❌ НЕТ! Нельзя перебивать. Слушайте внимательно.</div>
-        <p class="toggle">👆 нажмите, чтобы увидеть ответ</p>
-      </div>
-      <div class="card" onclick="this.classList.toggle('open')">
-        <h3>2️⃣ Крепкое рукопожатие — это хорошо.</h3>
-        <div class="answer ans-yes">✅ ДА! Короткое и крепкое рукопожатие показывает уверенность.</div>
-        <p class="toggle">👆 нажмите, чтобы увидеть ответ</p>
-      </div>
-      <div class="card" onclick="this.classList.toggle('open')">
-        <h3>3️⃣ Нужно говорить «спасибо» и «извините».</h3>
-        <div class="answer ans-yes">✅ ДА! Это базовые слова речевого этикета.</div>
-        <p class="toggle">👆 нажмите, чтобы увидеть ответ</p>
-      </div>
-      <div class="card" onclick="this.classList.toggle('open')">
-        <h3>4️⃣ Улыбка — это вербальное средство.</h3>
-        <div class="answer ans-no">❌ НЕТ! Улыбка — невербальное средство, это не слово.</div>
-        <p class="toggle">👆 нажмите, чтобы увидеть ответ</p>
-      </div>
-      <div class="card" onclick="this.classList.toggle('open')">
-        <h3>5️⃣ Очень близкая дистанция — это комфортно.</h3>
-        <div class="answer ans-no">❌ НЕТ! Лучше 1–1,5 метра — это вежливо и удобно.</div>
-        <p class="toggle">👆 нажмите, чтобы увидеть ответ</p>
-      </div>
-      <div class="card" onclick="this.classList.toggle('open')">
-        <h3>6️⃣ «Здравствуйте!» — это приветствие.</h3>
-        <div class="answer ans-yes">✅ ДА! Приветствие — начало разговора.</div>
-        <p class="toggle">👆 нажмите, чтобы увидеть ответ</p>
-      </div>
-    </div>
   </section>
 
   <!-- ================= ЗАКЛЮЧЕНИЕ ================= -->
@@ -439,8 +479,6 @@
   </section>
 
 </main>
-
-<footer>Учебная страница для презентации · Речевой этикет в переговорной коммуникации · Простой русский язык</footer>
 
 <script>
   // плавное появление секций при прокрутке
